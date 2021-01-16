@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Space Sailor"
-run/main_scene="res://MainScene.tscn"
+config/name="Space Sailor 2"
+run/main_scene="res://src/MainScene.tscn"
 config/icon="res://icon.png"
 
 [rendering]
