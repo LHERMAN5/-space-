@@ -6,7 +6,13 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 201, 98 )
+position = Vector2( 232, 98 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 232, 751 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 266.507, 607.636 )
+rotating = true
+current = true
+zoom = Vector2( 3, 3 )
