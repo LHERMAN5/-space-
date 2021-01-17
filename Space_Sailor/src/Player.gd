@@ -17,18 +17,17 @@ var radius: int = 0
 
 var unit: int = 0
 
+
 onready var sprite : Sprite = get_node("Sprite")
+onready var player : Node2D = get_node("Player")
 
 
 func _physics_process(delta):
-	pos = sprite.get_position()
 	
-	print(pos)
 	
-	pos.x = 232-pos.x
-	pos.y = 751-pos.y
-	
-	print(pos)
+	pos.x = 232-position.x
+	pos.y = 751-position.y
+
 	
 	
 	if Input.is_action_pressed("move_left"):
