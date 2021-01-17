@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Planet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Star.png" type="Texture" id=3]
+[ext_resource path="res://assets/space.png" type="Texture" id=4]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.507407, 1 )
@@ -26,26 +27,47 @@ color_ramp = SubResource( 2 )
 hue_variation = 0.01
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 3506.58, 9625.95 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -317.005, 612.359 )
+position = Vector2( -1110.95, 970.375 )
 scale = Vector2( 0.05, 0.05 )
 
 [node name="Planet" parent="." instance=ExtResource( 2 )]
-position = Vector2( 232, 751 )
+modulate = Color( 0.0431373, 0.521569, 0.686275, 1 )
+position = Vector2( 1430, 966 )
 scale = Vector2( 0.5, 0.5 )
-
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 266.507, 607.636 )
-rotating = true
-zoom = Vector2( 3, 3 )
+collision_mask = 513
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2440, 300 )
+modulate = Color( 0.8, 0.580392, 0.117647, 1 )
+position = Vector2( 2660, 475 )
+rotation = -7.87667
 
 [node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 1.48767, 0 )
+position = Vector2( 3567.15, 1741.25 )
 amount = 100
 lifetime = 5.0
 process_material = SubResource( 3 )
 texture = ExtResource( 3 )
+
+[node name="space" type="Sprite" parent="."]
+position = Vector2( -1110.95, 711.279 )
+texture = ExtResource( 4 )
+
+[node name="StaticBody2D2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.937255, 0.164706, 0.164706, 1 )
+position = Vector2( 4430, 1173 )
+rotation = 5.33198
+scale = Vector2( 0.6, 0.6 )
+
+[node name="StaticBody2D3" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.258824, 0.94902, 0.235294, 1 )
+position = Vector2( 5785, -641 )
+rotation = 6.09294
+
+[node name="StaticBody2D4" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.243137, 0.305882, 0.698039, 1 )
+position = Vector2( 6425, 1339 )
+rotation = -10.5418
+scale = Vector2( 0.8, 0.8 )
