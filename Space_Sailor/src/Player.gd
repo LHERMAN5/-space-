@@ -3,7 +3,7 @@ extends KinematicBody2D
 var speed : int = 100
 var jumpForce : int = 1000
 var gravity : int = 10000
-var specGrav : int = 100000000
+var specGrav : int = 10000000
 
 var grav : Vector2 = Vector2()
 
@@ -25,7 +25,7 @@ var planet : Vector2 = Vector2()
 onready var sprite : Sprite = get_node("Sprite")
 
 func getRad(position, planet):
-	return sqrt(pow(planet.x-position.x,2)+pow(planet.y-position.y,2))
+	return sqrt(pow(planet.x-position.x,2)+pow(planet.y-position.y,2))*.1
 	
 func getAng(vec1,vec2):
 	return atan2(vec1.y-vec2.y,vec1.x-vec2.x)
@@ -63,8 +63,13 @@ func _physics_process(delta):
 		vel.y += pos.y*delta*gravity/unit
 	
 	#jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_on_ceiling() or is_on_wall()):
 		vel.y -= jumpForce
+		
+	if Input.is_action_pressed("dive"):
+		specGrav += 1000000
+	else:
+		specGrav = 10000000
 		
 	
 	#flip sprite
