@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 var speed : int = 100
-var jumpForce : int = 600
-var gravity : int = 800
+var jumpForce : int = 1000
+var gravity : int = 10000
+var specGrav : int = 100000000
 
 var grav : Vector2 = Vector2()
 
@@ -17,23 +18,40 @@ var radius: int = 0
 
 var unit: int = 0
 
+var planet : Vector2 = Vector2()
+
+
 
 onready var sprite : Sprite = get_node("Sprite")
-onready var player : Node2D = get_node("Player")
 
+func getRad(position, planet):
+	return sqrt(pow(planet.x-position.x,2)+pow(planet.y-position.y,2))
+	
+func getAng(vec1,vec2):
+	return atan2(vec1.y-vec2.y,vec1.x-vec2.x)
 
 func _physics_process(delta):
 	
+	planet.x = 232
+	planet.y = 751
+	pos.x = planet.x-position.x
+	pos.y = planet.y-position.y
 	
-	pos.x = 232-position.x
-	pos.y = 751-position.y
+	gravity = specGrav/pow(getRad(position,planet),2)
+	
+	print("gravity ",gravity)
+	print(getRad(position,planet))
+	print("grav", specGrav/pow(getRad(position,planet),2))
 
-	
 	
 	if Input.is_action_pressed("move_left"):
 		vel.x -= speed
 	if Input.is_action_pressed("move_right"):
 		vel.x += speed
+	if Input.is_action_pressed("move_up"):
+		vel.y -= speed
+	if Input.is_action_pressed("move_down"):
+		vel.y += speed
 		
 	vel = move_and_slide(vel, Vector2.UP)
 	
@@ -47,6 +65,7 @@ func _physics_process(delta):
 	#jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		vel.y -= jumpForce
+		
 	
 	#flip sprite
 	if vel.x < 0:
