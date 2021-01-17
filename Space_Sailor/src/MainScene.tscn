@@ -41,7 +41,7 @@ rotating = true
 zoom = Vector2( 3, 3 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1499.67, 317.493 )
+position = Vector2( 2440, 300 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 1.48767, 0 )
