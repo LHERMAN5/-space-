@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Planet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Star.png" type="Texture" id=3]
 [ext_resource path="res://assets/space.png" type="Texture" id=4]
+[ext_resource path="res://src/BlackHole.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.507407, 1 )
@@ -46,7 +47,7 @@ rotation = -7.87667
 
 [node name="Particles2D" type="Particles2D" parent="."]
 position = Vector2( 3567.15, 1741.25 )
-amount = 100
+amount = 123
 lifetime = 5.0
 process_material = SubResource( 3 )
 texture = ExtResource( 3 )
@@ -71,3 +72,37 @@ modulate = Color( 0.243137, 0.305882, 0.698039, 1 )
 position = Vector2( 6425, 1339 )
 rotation = -10.5418
 scale = Vector2( 0.8, 0.8 )
+
+[node name="StaticBody2D5" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.521569, 0.231373, 0.603922, 1 )
+position = Vector2( 8726, -11 )
+rotation = 6.08073
+scale = Vector2( 0.5, 0.5 )
+
+[node name="StaticBody2D6" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.647059, 0.784314, 0.513726, 1 )
+position = Vector2( 9526, 562 )
+rotation = -11.8054
+
+[node name="StaticBody2D7" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.878431, 0.486275, 0.909804, 1 )
+position = Vector2( 12316, -758 )
+rotation = -9.32878
+scale = Vector2( 0.6, 0.6 )
+
+[node name="StaticBody2D8" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.815686, 0.670588, 0.439216, 1 )
+position = Vector2( 16587, 647 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="StaticBody2D9" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.466667, 0.72549, 0.678431, 1 )
+position = Vector2( 18935, 598 )
+rotation = -9.90125
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 21675, -222 )
+
+[node name="StaticBody2D10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 17714, 1598 )
+scale = Vector2( 0.4, 0.4 )

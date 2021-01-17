@@ -12,9 +12,9 @@ var ydist: int = 0
 
 var unit: int = 0
 
-var planet = [Vector2(1430,966),Vector2(2660,475),Vector2(4430,1173),Vector2(5785,-641),Vector2(6425,1339)]
+var planet = [Vector2(1430,966),Vector2(2660,475),Vector2(4430,1173),Vector2(5785,-641),Vector2(6425,1339),Vector2(8726,-11),Vector2(9526,562),Vector2(12316,-758),Vector2(17714,1598),Vector2(16587,647),Vector2(18935,598),Vector2(21675,-222)]
 var standGrav = 10000000
-var specGrav = [.5,1,.6,1,.8]
+var specGrav = [.5,1,.6,1,.8,.5,1,.6,.9,.4,1,1]
 
 var start=false
 
