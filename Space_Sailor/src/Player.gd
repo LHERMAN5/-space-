@@ -1,24 +1,15 @@
 extends KinematicBody2D
 
-var speed : int = 100
-var jumpForce : int = 1000
 var gravity : int = 0
 
 var vel : Vector2 = Vector2()
 var accel : Vector2 = Vector2()
 
-var xdist: int = 0
-var ydist: int = 0
-
-var unit: int = 0
-
-var planet = [Vector2(1430,966),Vector2(2660,475),Vector2(4430,1173),Vector2(5785,-641),Vector2(6425,1339),Vector2(8726,-11),Vector2(9526,562),Vector2(12316,-758),Vector2(17714,1598),Vector2(16587,647),Vector2(18935,598),Vector2(21675,-222)]
+var planet = [Vector2(1430,966),Vector2(2660,475),Vector2(4430,1173),Vector2(5785,-641),Vector2(6425,1339),Vector2(8726,-11),Vector2(9526,562),Vector2(12237,-557),Vector2(17714,1598),Vector2(16587,647),Vector2(18935,598),Vector2(20798,537),Vector2(7854,711),Vector2(11388,805),Vector2(13606,385),Vector2(15262,-770)]
 var standGrav = 10000000
-var specGrav = [.5,1,.6,1,.8,.5,1,.6,.9,.4,1,1]
+var specGrav = [.5,1,.6,1,.8,.5,1,.6,.9,.4,1,1,.3,.8,.7,.4]
 
 var start=false
-
-#onready var sprite : Sprite = get_node("Sprite")
 
 func getRad(position, planet):
 	return sqrt(pow(planet.x-position.x,2)+pow(planet.y-position.y,2))*.1

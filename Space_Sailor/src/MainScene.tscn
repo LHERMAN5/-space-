@@ -86,7 +86,7 @@ rotation = -11.8054
 
 [node name="StaticBody2D7" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.878431, 0.486275, 0.909804, 1 )
-position = Vector2( 12316, -758 )
+position = Vector2( 12237, -557 )
 rotation = -9.32878
 scale = Vector2( 0.6, 0.6 )
 
@@ -101,8 +101,32 @@ position = Vector2( 18935, 598 )
 rotation = -9.90125
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 21675, -222 )
+position = Vector2( 20798, 537 )
 
 [node name="StaticBody2D10" parent="." instance=ExtResource( 2 )]
 position = Vector2( 17714, 1598 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="StaticBody2D11" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.898039, 0.443137, 0.870588, 1 )
+position = Vector2( 7854, 711 )
+rotation = 9.51903
+scale = Vector2( 0.3, 0.3 )
+
+[node name="StaticBody2D12" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.854902, 0.254902, 0.254902, 1 )
+position = Vector2( 11388, 805 )
+rotation = -2.22879
+scale = Vector2( 0.8, 0.8 )
+
+[node name="StaticBody2D13" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.278431, 0.172549, 0.65098, 1 )
+position = Vector2( 13606, 385 )
+rotation = -8.37758
+scale = Vector2( 0.7, 0.7 )
+
+[node name="StaticBody2D14" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.266667, 0.266667, 0.266667, 1 )
+position = Vector2( 15262, -770 )
+rotation = 7.61662
 scale = Vector2( 0.4, 0.4 )
